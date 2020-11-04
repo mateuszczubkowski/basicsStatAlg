@@ -2,6 +2,7 @@ import statistics as st
 import numpy as np
 import pandas as pd
 from scipy import stats as sc
+import matplotlib.pyplot as plt
 
 # df = np.loadtxt("Wzrost.csv", delimiter=',', skiprows=0)
 # print(df)
@@ -49,5 +50,41 @@ print("Mode:", st.mode(data2))
 # cwiczenie 3
 print()
 print("Cwiczenie 3")
-#print("Kurtosis:", sc.kurtosis(data2))
-print("Kurtosis:", sc.s(data2))
+print("Kurtosis:", sc.kurtosis(data2))
+print(sc.describe(data2))
+print("Skewness:", sc.skew(data2))
+print("Powtórzenia:", sc.find_repeats(data2))
+print("Entropy:", sc.entropy(data2))
+print("Trimmed min:", sc.tmin(data2))
+print("Trimmed max:", sc.tmax(data2))
+print("Nth moment:", sc.moment(data2))
+print("Bayesian confidence intervals  :", sc.bayes_mvs(data2))
+# other scipy.stats functions trim_mean(), iqr(), sem(), gstd(), mvdist(),
+# https://docs.scipy.org/doc/scipy/reference/stats.html
+
+# cwiczenie 4
+columns = ["Gender", "FSIQ", "VIQ", "PIQ", "Weight", "Height", "MRI_Count"]
+df = pd.read_csv("brain_size.csv", sep=";", usecols=columns)
+print(df.head())
+print("Średnia VIQ: ", df["VIQ"].mean())
+print("Liczba kobiet: ", df[df.Gender == "Female"].shape[0])
+print("Liczba mężczyzn: ", df[df.Gender == "Male"].shape[0])
+plt.hist(df.VIQ)
+plt.title("VIQ")
+plt.show()
+plt.hist(df.PIQ)
+plt.title("PIQ")
+plt.show()
+plt.hist(df.FSIQ)
+plt.title("FSIQ")
+plt.show()
+
+plt.hist(df[df.Gender == "Female"].VIQ)
+plt.title("VIQ kobiety")
+plt.show()
+plt.hist(df[df.Gender == "Female"].PIQ)
+plt.title("PIQ kobiety")
+plt.show()
+plt.hist(df[df.Gender == "Female"].FSIQ)
+plt.title("FSIQ kobiety")
+plt.show()
