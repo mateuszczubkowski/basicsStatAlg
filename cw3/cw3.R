@@ -1,3 +1,4 @@
+library(Rlab)
 # 1
 probabilities <- rep(1/6, 6)
 elements <- seq(1, 6, 1)
