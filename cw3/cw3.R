@@ -35,3 +35,79 @@ median(poi)
 var(poi)
 skew(poi)
 kurt(poi)
+
+# 4
+hist(bin)
+
+hist(poi)
+
+# 5
+poi <- rpois(20,0.4)
+P <- ecdf(poi)
+plot(P)
+
+bin <- rbinom(20,20,0.4)
+P <- ecdf(bin)
+plot(P)
+
+# 6
+norm <- rnorm(10, 0, 2)
+
+print('mean - 0')
+mean(norm)
+print('median - 0')
+median(norm)
+print('variance - 4')
+var(norm)
+print('skewness - 0')
+skew(norm)
+print('kurtosis - 0')
+kurt(norm)
+
+norm <- rnorm(100, 0, 2)
+
+print('mean - 0')
+mean(norm)
+print('median - 0')
+median(norm)
+print('variance - 4')
+var(norm)
+print('skewness - 0')
+skew(norm)
+print('kurtosis - 0')
+kurt(norm)
+
+norm <- rnorm(1000, 0, 2)
+
+print('mean - 0')
+mean(norm)
+print('median - 0')
+median(norm)
+print('variance - 4')
+var(norm)
+print('skewness - 0')
+skew(norm)
+print('kurtosis - 0')
+kurt(norm)
+
+norm <- rnorm(10000, 0, 2)
+
+print('mean - 0')
+mean(norm)
+print('median - 0')
+median(norm)
+print('variance - 4')
+var(norm)
+print('skewness - 0')
+skew(norm)
+print('kurtosis - 0')
+kurt(norm)
+
+# 7
+norm1 <- rnorm(1000, 1, 2)
+norm2 <- rnorm(1000, 0, 1)
+norm3 <- rnorm(1000, -1, 0.5)
+
+hist(norm1)
+hist(norm2)
+hist(norm3)
